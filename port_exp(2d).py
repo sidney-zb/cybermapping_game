@@ -99,7 +99,7 @@ def UD2payoff(xt, n, pe, round):
 # 生成x轴数据
 xt = np.linspace(0, 1, 100)
 # 计算函数值
-y2 = UD2payoff(xt, 5, 0.5, 0)
+y2 = UD2payoff(xt, 10, 0.5, 0)
 
 # 创建图像
 plt.figure(figsize=(8, 6))
@@ -199,7 +199,7 @@ def ADpayoff(xt, n, pe, round):
 # 生成x轴数据
 xt = np.linspace(0, 1, 100)
 # 计算函数值
-y = ADpayoff(xt, 6, 0.5, 0)
+y = ADpayoff(xt, 10, 0.5, 0)
 
 # 创建图像
 plt.figure(figsize=(8, 6))

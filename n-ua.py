@@ -104,9 +104,9 @@ plt.scatter(n, ua_values, label="散点图示例", color="blue", marker="o")
 # 设置 y 轴范围
 # plt.ylim(-1.2, 1.2)
 # 添加标签和标题
-plt.xlabel("X 轴")
-plt.ylabel("Y 轴")
-plt.title("n-ua关系图")
+plt.xlabel("n")
+plt.ylabel("ua")
+plt.title("n-ua")
 
 # 显示图例
 plt.legend()

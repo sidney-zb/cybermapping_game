@@ -96,15 +96,15 @@ def ADpayoff(vh, vl, n, pe, round):
 
 
 # 定义二元函数，这里以一个简单的二元正弦函数为例
-Z = ADpayoff(H, L, 8, 0.5, 0)
+Z = ADpayoff(H, L, 10, 0.5, 0)
 
 # 绘制3D曲面图
 ax.plot_surface(H, L, Z, cmap="viridis")
 
 # 添加轴标签
-ax.set_xlabel("H轴")
-ax.set_ylabel("L轴")
-ax.set_zlabel("Z轴")
+ax.set_xlabel("Uh轴")
+ax.set_ylabel("Ul轴")
+ax.set_zlabel("Ua轴")
 
 # 显示图形
 plt.show()

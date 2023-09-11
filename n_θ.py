@@ -10,7 +10,7 @@ def f(xt, ypxl, pi):
 # 生成x轴数据
 xt = np.linspace(0, 0.99, 100)
 # 计算函数值，这里的 0.002 仅作示例，你可以使用不同的 ypxl 值
-ypxl = 0.1
+ypxl = 0.01
 n = f(xt, ypxl, 0.5)
 
 # 创建图像
