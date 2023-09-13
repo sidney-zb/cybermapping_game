@@ -46,19 +46,24 @@ def UD1payoff(xt, n, pe, round):
 
 
 # 生成x轴数据
-xt = np.linspace(0, 1, 100)
+xt = np.linspace(0, 1, 15)
 # 计算函数值
-y1 = UD1payoff(xt, 10, 0.5, 0)
+y1 = UD1payoff(xt, 5, 0.5, 0)
+y2 = UD1payoff(xt, 8, 0.5, 0)
+y3 = UD1payoff(xt, 10, 0.5, 0)
 
 # 创建图像
 plt.figure(figsize=(8, 6))
-plt.plot(xt, y1, label="1experiment")
-plt.title("Function Plot")
+plt.plot(xt, y1, label="n=5", marker="*", color="red", markersize="5")
+plt.plot(xt, y2, label="n=8", marker="o", color="blue", markersize="5")
+plt.plot(xt, y3, label="n=10", marker="*", color="green", markersize="5")
+
+plt.title("ud1 vs. θ")
 plt.xlabel("θ")
 plt.ylabel("Ud1")
 plt.legend()
-plt.grid(True)
-plt.savefig("θ-ud1.png")  # 可以保存为其他格式，如PDF
+plt.grid(False)
+# plt.show()
 
 
 # 递归计算防御方（端口关闭情况下）收益,n为递归轮次，pe为推断，r为当前轮次,θ为变量
@@ -97,19 +102,22 @@ def UD2payoff(xt, n, pe, round):
 
 
 # 生成x轴数据
-xt = np.linspace(0, 1, 100)
+xt = np.linspace(0, 1, 15)
 # 计算函数值
-y2 = UD2payoff(xt, 10, 0.5, 0)
+y1 = UD2payoff(xt, 5, 0.5, 0)
+y2 = UD2payoff(xt, 8, 0.5, 0)
+y3 = UD2payoff(xt, 10, 0.5, 0)
 
 # 创建图像
 plt.figure(figsize=(8, 6))
-plt.plot(xt, y2, label="1experiment")
-plt.title("Function Plot")
+plt.plot(xt, y1, label="n=5", marker="*", color="red", markersize="5")
+plt.plot(xt, y2, label="n=8", marker="o", color="blue", markersize="5")
+plt.plot(xt, y3, label="n=10", marker="*", color="green", markersize="5")
+plt.title("ud2 vs. θ")
 plt.xlabel("θ")
 plt.ylabel("Ud2")
 plt.legend()
-plt.grid(True)
-plt.savefig("θ-ud2.png")  # 可以保存为其他格式，如PDF
+plt.grid(False)
 
 
 # 递归计算攻击方（端口关闭情况下）收益,n为递归轮次，pe为推断，r为当前轮次
@@ -197,21 +205,25 @@ def ADpayoff(xt, n, pe, round):
 
 
 # 生成x轴数据
-xt = np.linspace(0, 1, 100)
+xt = np.linspace(0, 1, 15)
 # 计算函数值
-y = ADpayoff(xt, 10, 0.5, 0)
+y1 = ADpayoff(xt, 5, 0.5, 0)
+y2 = ADpayoff(xt, 8, 0.5, 0)
+y3 = ADpayoff(xt, 10, 0.5, 0)
 
 # 创建图像
 plt.figure(figsize=(8, 6))
-plt.plot(xt, y, label="1experiment")
-plt.title("Function Plot")
+plt.plot(xt, y1, label="n=5", marker="*", color="red", markersize="5")
+plt.plot(xt, y2, label="n=8", marker="o", color="blue", markersize="5")
+plt.plot(xt, y3, label="n=10", marker="*", color="green", markersize="5")
+plt.title("ua vs. θ")
 plt.xlabel("θ")
 plt.ylabel("Ua")
 plt.legend()
-plt.grid(True)
-plt.savefig("θ-ua.png")  # 可以保存为其他格式，如PDF
+plt.grid(False)
+plt.show()
 
-
+"""
 # 递归计算攻击方（端口关闭情况下）收益,n为递归轮次，pe为推断，r为当前轮次
 def ADpayoff_left(t, n, pe, round):
     # 博弈初始配置
@@ -256,7 +268,7 @@ def ADpayoff_left(t, n, pe, round):
         return AD_l
 
 
-"""
+
 # 递归计算攻击方（端口开放情况下）收益,n为递归轮次，pe为推断，r为当前轮次,t为耐心
 def ADpayoff_right(t, n, pe, round):
     # 博弈初始配置
