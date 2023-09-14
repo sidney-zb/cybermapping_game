@@ -1,19 +1,17 @@
-import numpy as np
-from scipy.optimize import minimize
+# 初始值、步长和精度
+initial_x = 1.0
+step_size = 0.01
+precision = 1e-4
+x = initial_x
+for i in range(0, 100000000):
+    fx = x**2 + 2 * x + 10
+    # print(x)
+    # 终止条件：如果函数值小于预定精度，返回当前 x 作为极小值
+    if abs(fx) < precision:
+        break
+    # 更新 x：在当前 x 处向函数下降最快的方向移动
+    x -= step_size
 
 
-# 步骤 2: 定义目标函数
-def objective_function(x):
-    return x**2 + 4 * x + 4  # 示例函数 f(x) = x^2 + 4x + 4
-
-
-# 步骤 3: 使用优化算法（这里使用Nelder-Mead算法）
-initial_guess = 0.0  # 步骤 4: 设置初始点
-result = minimize(objective_function, initial_guess, method="Nelder-Mead")
-
-# 步骤 6: 获取结果
-minimum_x = result.x[0]  # 极值点的位置
-minimum_value = result.fun  # 极小值
-
-print(f"极小值点的位置: x = {minimum_x}")
-print(f"极小值: f(x) = {minimum_value}")
+print("极小值:", x)
+print("函数值:", x**2 + 2 * x + 10)
