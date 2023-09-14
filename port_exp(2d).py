@@ -48,7 +48,7 @@ def UD1payoff(xt, n, pe, round):
 # 生成x轴数据
 xt = np.linspace(0, 1, 15)
 # 计算函数值
-y1 = UD1payoff(xt, 5, 0.5, 0)
+y1 = UD1payoff(xt, 3, 0.5, 0)
 y2 = UD1payoff(xt, 8, 0.5, 0)
 y3 = UD1payoff(xt, 10, 0.5, 0)
 
@@ -56,7 +56,7 @@ y3 = UD1payoff(xt, 10, 0.5, 0)
 plt.figure(figsize=(8, 6))
 plt.plot(xt, y1, label="n=5", marker="*", color="red", markersize="5")
 plt.plot(xt, y2, label="n=8", marker="o", color="blue", markersize="5")
-plt.plot(xt, y3, label="n=10", marker="*", color="green", markersize="5")
+plt.plot(xt, y3, label="n=10", marker="^", color="green", markersize="5")
 
 plt.title("ud1 vs. θ")
 plt.xlabel("θ")

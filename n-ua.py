@@ -18,7 +18,7 @@ def ADpayoff_left(n, pe, round):
     # 自然选择概率
     p = 0.5
     # 西塔
-    xt = 0.23
+    xt = 0.8
     # 递归轮次
 
     # 耐心随轮次指数增长
@@ -63,7 +63,7 @@ def ADpayoff_right(n, pe, round):
     # 自然选择概率
     p = 0.5
     # 西塔
-    xt = 0.23
+    xt = 0.8
     # 递归轮次
 
     # 耐心随轮次指数增长
@@ -92,14 +92,14 @@ def ADpayoff(n, pe, round):
 n = []
 ua_values = []
 
-for i in range(1, 11):
+for i in range(1, 5):
     n.append(int(i))
     ua_values.append(ADpayoff(int(i), 0.5, 0))
     print(ADpayoff(int(i), 0.5, 0))
 
 
 # 创建散点图
-plt.scatter(n, ua_values, label="散点图示例", color="blue", marker="o")
+plt.scatter(n, ua_values, label="θ=0.5", color="red", marker="^")
 
 # 设置 y 轴范围
 # plt.ylim(-1.2, 1.2)
